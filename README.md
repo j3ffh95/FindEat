@@ -13,3 +13,4 @@ ___
 - The map is displayed using [Google Maps React Component](https://www.npmjs.com/package/google-maps-react), and the [Google Maps JavaScript API](https://developers.google.com/maps/documentation/javascript/overview)
 - **Design Tool** I used was materialUI it is a React library that help you built an easy UI
 - **Video Tool** Pexels was a great website to find stock videos for my landing page
+- **Map Style Tool** SnazzyMaps help to style the google maps it has many styles, great resource 
