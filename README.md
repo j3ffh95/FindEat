@@ -3,7 +3,7 @@
 
 I made this application to hellp users find somewhere to eat around or in other place. User can search by rating for now.
 
-The target audience for this application are people that love to eat and try new cusines. 
+The target audience for this application are people that love to eat and try new cuisines. 
 
 ___
 
