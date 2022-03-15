@@ -29,7 +29,7 @@ const PlaceDetails = ({ place, selected, refProp }) => {
             ? place.photo.images.medium.url
             : "https://www.foodserviceandhospitality.com/wp-content/uploads/2016/09/Restaurant-Placeholder-001.jpg"
         }
-        title={place.name}
+        title={place.name.caption}
       />
       {console.log(place.photo)}
       <CardContent>
@@ -49,7 +49,7 @@ const PlaceDetails = ({ place, selected, refProp }) => {
           </Typography>
         </Box>
         <Box display='flex' justifyContent='space-between'>
-          <Typography component='legend'>Ranking1</Typography>
+          <Typography component='legend'>Ranking</Typography>
           <Typography gutterBottom variant='subtitle1'>
             {place.ranking}
           </Typography>
