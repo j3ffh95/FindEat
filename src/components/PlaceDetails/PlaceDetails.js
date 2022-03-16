@@ -21,9 +21,10 @@ const PlaceDetails = ({ place, selected, refProp }) => {
   const classes = useStyles();
 
   return (
+    // the elevation attr in Card gives it a shadow effect
     <Card elevation={6}>
       <CardMedia
-        style={{ height: 350 }}
+        style={{ height: 200 }}
         image={
           place.photo
             ? place.photo.images.medium.url
@@ -33,6 +34,7 @@ const PlaceDetails = ({ place, selected, refProp }) => {
       />
       {console.log('hello', place)};
       <CardContent>
+        {/* the gutterBottom prop means extra margin in the bottom */}
         <Typography gutterBottom variant='h5'>
           {place.name}
         </Typography>
