@@ -22,35 +22,35 @@ const App = () => {
   const [childClicked, setChildClicked] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
-  // call the getPlacesData as soon as this component renders
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(
       ({ coords: { latitude, longitude } }) => {
         setCoords({ lat: latitude, lng: longitude });
       }
-    );
-  }, []);
-
-  useEffect(() => {
-    const filtered = places.filter(place => Number(place.rating) > rating);
-
-    setFilteredPlaces(filtered);
-  }, [rating]);
-
-  useEffect(() => {
-    if (bounds) {
-      setIsLoading(true);
-
-      getPlacesData(type, bounds.sw, bounds.ne).then(data => {
-        setPlaces(data.filter(place => place.name && place.num_reviews > 0));
-        setFilteredPlaces([]);
-        setRating("");
-        setIsLoading(false);
-      });
-    }
-  }, [bounds, type]);
-
-  const onLoad = autoC => setAutocomplete(autoC);
+      );
+    }, []);
+    
+    useEffect(() => {
+      const filtered = places.filter(place => Number(place.rating) > rating);
+      
+      setFilteredPlaces(filtered);
+    }, [rating]);
+    
+    // call the getPlacesData as soon as this component renders
+    useEffect(() => {
+      if (bounds) {
+        setIsLoading(true);
+        
+        getPlacesData(type, bounds.sw, bounds.ne).then(data => {
+          setPlaces(data.filter(place => place.name && place.num_reviews > 0));
+          setFilteredPlaces([]);
+          setRating("");
+          setIsLoading(false);
+        });
+      }
+    }, [bounds, type]);
+    
+    const onLoad = autoC => setAutocomplete(autoC);
 
   const onPlaceChanged = () => {
     const lat = autocomplete.getPlace().geometry.location.lat();
