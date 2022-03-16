@@ -47,7 +47,7 @@ const PlaceDetails = ({ place, selected, refProp }) => {
         <Box display='flex' justifyContent='space-between'>
           <Typography component='legend'>Price</Typography>
           <Typography gutterBottom variant='subtitle1'>
-            {place.price_level ? place.price_level : '$'}
+            {place.price_level ? place.price_level : 'not found'}
           </Typography>
         </Box>
         <Box display='flex' justifyContent='space-between'>
@@ -56,6 +56,7 @@ const PlaceDetails = ({ place, selected, refProp }) => {
             {place.ranking}
           </Typography>
         </Box>
+        {/* ?. we use this to see if place exist */}
         {place?.awards?.map(award => (
           <Box
             display='flex'
@@ -63,7 +64,7 @@ const PlaceDetails = ({ place, selected, refProp }) => {
             my={1}
             alignItems='center'
           >
-            <img src={award.images.small} />
+            <img src={award.images.small} alt={award.display_name} />
             <Typography variant='subtitle2' color='textSecondary'>
               {award.display_name}
             </Typography>
@@ -72,7 +73,8 @@ const PlaceDetails = ({ place, selected, refProp }) => {
         {place?.cuisine?.map(({ name }) => (
           <Chip key={name} size='small' label={name} className={classes.chip} />
         ))}
-        {place.address && (
+        {/* && means to render a component */}
+        {place?.address && (
           <Typography
             gutterBottom
             variant='body2'
