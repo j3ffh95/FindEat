@@ -85,7 +85,7 @@ const PlaceDetails = ({ place, selected, refProp }) => {
             {place.address}
           </Typography>
         )}
-        {place.phone && (
+        {place?.phone && (
           <Typography
             variant='body2'
             color='textSecondary'
